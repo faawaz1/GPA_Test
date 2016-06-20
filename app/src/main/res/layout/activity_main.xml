@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.pc.test.MainActivity">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/hu_1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="64dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/hu_2"
+        android:layout_alignTop="@+id/gr_2"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/hr_3"
+        android:layout_below="@+id/hu_2"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/hr_4"
+        android:layout_below="@+id/hr_3"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="احسب"
+        android:id="@+id/btn_1"
+        android:onClick="calcu"
+        android:textSize="30dp"
+        android:layout_marginTop="32dp"
+        android:layout_below="@+id/hr_7"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="النتيجة"
+        android:id="@+id/txt_1"
+        android:textSize="25dp"
+        android:layout_below="@+id/btn_1"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/gr_1"
+        android:layout_alignTop="@+id/hu_1"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/btn_1"
+        android:layout_alignStart="@+id/gr_2" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/gr_2"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/gr_1"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/hu_2" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/gr_3"
+        android:layout_alignBaseline="@+id/hr_3"
+        android:layout_alignBottom="@+id/hr_3"
+        android:layout_alignEnd="@+id/gr_2"
+        android:layout_alignStart="@+id/gr_2" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/gr_4"
+        android:layout_alignBaseline="@+id/hr_4"
+        android:layout_alignBottom="@+id/hr_4"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/hr_4" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/hr_5"
+        android:layout_below="@+id/hr_4"
+        android:layout_alignEnd="@+id/hr_4" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/hr_7"
+        android:layout_below="@+id/hr_6"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/hr_6"
+        android:layout_below="@+id/hr_5"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/gr_7"
+        android:layout_below="@+id/hr_6"
+        android:layout_alignStart="@+id/gr_4"
+        android:layout_alignEnd="@+id/gr_6" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/gr_6"
+        android:layout_above="@+id/hr_7"
+        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@+id/gr_4" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="عدد الساعات"
+        android:id="@+id/textView"
+        android:layout_above="@+id/gr_1"
+        android:layout_toStartOf="@+id/btn_1"
+        android:textSize="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="التقدير بالعلامة"
+        android:id="@+id/textView2"
+        android:textSize="20dp"
+        android:layout_alignBottom="@+id/textView"
+        android:layout_alignEnd="@+id/gr_1" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/gr_5"
+        android:layout_below="@+id/gr_4"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/hr_4" />
+
+</RelativeLayout>
