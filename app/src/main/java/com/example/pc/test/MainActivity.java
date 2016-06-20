@@ -359,7 +359,7 @@ public class MainActivity extends AppCompatActivity {
                 SI=0;
         }
         else
-            SI=2020;
+            SI=20200;
     }
    /* public void sven(){
         if(hr77==3){
