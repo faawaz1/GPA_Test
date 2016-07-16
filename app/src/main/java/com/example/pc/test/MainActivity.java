@@ -81,9 +81,10 @@ public class MainActivity extends AppCompatActivity {
         list.add("D+");
         list.add("D");
         list.add("F");
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_spinner_item ,list);
 
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_spinner_item ,list);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
         gr1.setAdapter(adapter);
         gr2.setAdapter(adapter);
         gr3.setAdapter(adapter);
@@ -326,7 +327,7 @@ public class MainActivity extends AppCompatActivity {
                 FI=0;
         }
         else
-            FI=2020;
+            FI=0;
     }
     public void six(){
         if(hr66==3){
@@ -370,7 +371,7 @@ public class MainActivity extends AppCompatActivity {
                 SI=0;
         }
         else
-            SI=20200;
+            SI=0;
     }
    public void sven(){
         if(hr77==3){
@@ -414,7 +415,6 @@ public class MainActivity extends AppCompatActivity {
                 SV=0;
         }
         else {
-            hr77 = 0;
             SV = 0;
         }
     }
@@ -423,10 +423,10 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    public void calcu(View h){
-        double NQAT=0.0;
-        double ALSAT=0.0;
-        double res=0.0;
+    public void calculate(View h){
+        double point=0.0;
+        double hours=0.0;
+        double result=0.0;
 
         get();
 
@@ -438,10 +438,14 @@ public class MainActivity extends AppCompatActivity {
         six();
         sven();
 
-        ALSAT=hr11+hr22+hr33+hr44+hr55+hr66+hr77;
-        NQAT=ON+TW+TH+FU+FI+SI+SV;
-        res=NQAT/ALSAT;
-        txt_1.setText("النقاط:"+NQAT+"    الساعات: "+ALSAT+"         النسبة:"+res+"");
+        hours=hr11+hr22+hr33+hr44+hr55+hr66+hr77;
+        point=ON+TW+TH+FU+FI+SI+SV;
+        result=point/hours;
+        if (hours==0.0){
+            txt_1.setText( "                   ادخل عدد الساعات اولاً                                    ");
+        }else {
+            txt_1.setText("النقاط: " + point + "    الساعات: " + hours + "      النسبة: " + result + "");
+        }
     }
 
 }
