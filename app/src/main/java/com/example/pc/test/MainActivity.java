@@ -36,15 +36,9 @@ public class MainActivity extends AppCompatActivity {
     double hr66;
     double hr77;
 
+    List<String> list=new ArrayList<String>(); //list for element of spinner
 
-
-    double ON=0;
-    double TW=0;
-    double TH=0;
-    double FU=0;
-    double FI=0;
-    double SI=0;
-    double SV=0;
+    double ON=0; //variable of point
 
     Button btn1;
     TextView txt_1;
@@ -71,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         gr7 = (Spinner) findViewById(R.id.gr7);
         txt_1 = (TextView) findViewById(R.id.txt_1);
 
-        List<String> list=new ArrayList<String>();
+
         list.add("A+");
         list.add("A");
         list.add("B+");
@@ -108,343 +102,77 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    public void one(){
-        if(hr11==3){
-            if(gr1.getSelectedItem().toString().equals("A+"))
-                ON=12;
-            if (gr1.getSelectedItem().toString().equals("A"))
-                ON=11.25;
-            if(gr1.getSelectedItem().toString().equals("B+"))
-                ON=10.5;
-            if(gr1.getSelectedItem().toString().equals("B"))
-                ON=9;
-            if(gr1.getSelectedItem().toString().equals("C+"))
-                ON=7.5;
-            if(gr1.getSelectedItem().toString().equals("C"))
-                ON=6;
-            if(gr1.getSelectedItem().toString().equals("D+"))
-                ON=4.5;
-            if(gr1.getSelectedItem().toString().equals("D"))
-                ON=3;
-            if(gr1.getSelectedItem().toString().equals("F"))
-                ON=0;
-        }
-        else if (hr11==2){
-            if(gr1.getSelectedItem().toString().equals("A+"))
-                ON=8;
-            if (gr1.getSelectedItem().toString().equals("A"))
-                ON=7.5;
-            if(gr1.getSelectedItem().toString().equals("B+"))
-                ON=7;
-            if(gr1.getSelectedItem().toString().equals("B"))
-                ON=6;
-            if(gr1.getSelectedItem().toString().equals("C+"))
-                ON=5;
-            if(gr1.getSelectedItem().toString().equals("C"))
-                ON=4;
-            if(gr1.getSelectedItem().toString().equals("D+"))
-                ON=3;
-            if(gr1.getSelectedItem().toString().equals("D"))
-                ON=2;
-            if(gr1.getSelectedItem().toString().equals("F"))
-                ON=0;
-        }
+    public void test(double hours,String grade) {
+        if (hours == 3) {
+            switch (grade) {
+                case "A+":ON += 12.0;
+                    break;
+                case "A":ON += 11.25;
+                    break;
+                case "B+":ON += 10.5;
+                    break;
+                case "B":ON += 9;
+                    break;
+                case "C+":ON += 7.6;
+                    break;
+                case "C":ON += 6;
+                    break;
+                case "D+":ON += 4.5;
+                    break;
+                case "D":ON += 3;
+                    break;
+                case "F":ON += 0;
+                    break;
+            }
+        } else
+            if (hours == 2) {
+                switch (grade) {
+                    case "A+":ON += 8;
+                        break;
+                    case "A":ON += 7.5;
+                        break;
+                    case "B+":ON += 7;
+                        break;
+                    case "B":ON += 6;
+                        break;
+                    case "C+":ON += 5;
+                        break;
+                    case "C":ON += 4;
+                        break;
+                    case "D+":ON += 3;
+                        break;
+                    case "D":ON += 2;
+                        break;
+                    case "F":ON += 0;
+                        break;
+                }
+            }
         else
-            ON=0;
+            ON += 0;
     }
-    public void two(){
-        if(hr22==3){
-            if(gr2.getSelectedItem().toString().equals("A+"))
-                TW=12;
-            if (gr2.getSelectedItem().toString().equals("A"))
-                TW=11.25;
-            if(gr2.getSelectedItem().toString().equals("B+"))
-                TW=10.5;
-            if(gr2.getSelectedItem().toString().equals("B"))
-                TW=9;
-            if(gr2.getSelectedItem().toString().equals("C+"))
-                TW=7.5;
-            if(gr2.getSelectedItem().toString().equals("C"))
-                TW=6;
-            if(gr2.getSelectedItem().toString().equals("D+"))
-                TW=4.5;
-            if(gr2.getSelectedItem().toString().equals("D"))
-                TW=3;
-            if(gr2.getSelectedItem().toString().equals("F"))
-                TW=0;
-        }
-        else if (hr22==2){
-            if(gr2.getSelectedItem().toString().equals("A+"))
-                TW=8;
-            if (gr2.getSelectedItem().toString().equals("A"))
-                TW=7.5;
-            if(gr2.getSelectedItem().toString().equals("B+"))
-                TW=7;
-            if(gr2.getSelectedItem().toString().equals("B"))
-                TW=6;
-            if(gr2.getSelectedItem().toString().equals("C+"))
-                TW=5;
-            if(gr2.getSelectedItem().toString().equals("C"))
-                TW=4;
-            if(gr2.getSelectedItem().toString().equals("D+"))
-                TW=3;
-            if(gr2.getSelectedItem().toString().equals("D"))
-                TW=2;
-            if(gr2.getSelectedItem().toString().equals("F"))
-                TW=0;
-        }
-        else
-            TW=0;
-    }
-    public void three(){
-        if(hr33==3){
-            if(gr3.getSelectedItem().toString().equals("A+"))
-                TH=12;
-            if (gr3.getSelectedItem().toString().equals("A"))
-                TH=11.25;
-            if(gr3.getSelectedItem().toString().equals("B+"))
-                TH=10.5;
-            if(gr3.getSelectedItem().toString().equals("B"))
-                TH=9;
-            if(gr3.getSelectedItem().toString().equals("C+"))
-                TH=7.5;
-            if(gr3.getSelectedItem().toString().equals("C"))
-                TH=6;
-            if(gr3.getSelectedItem().toString().equals("D+"))
-                TH=4.5;
-            if(gr3.getSelectedItem().toString().equals("D"))
-                TH=3;
-            if(gr3.getSelectedItem().toString().equals("F"))
-                TH=0;
-        }
-        else if (hr33==2){
-            if(gr3.getSelectedItem().toString().equals("A+"))
-                TH=8;
-            if (gr3.getSelectedItem().toString().equals("A"))
-                TH=7.5;
-            if(gr3.getSelectedItem().toString().equals("B+"))
-                TH=7;
-            if(gr3.getSelectedItem().toString().equals("B"))
-                TH=6;
-            if(gr3.getSelectedItem().toString().equals("C+"))
-                TH=5;
-            if(gr3.getSelectedItem().toString().equals("C"))
-                TH=4;
-            if(gr3.getSelectedItem().toString().equals("D+"))
-                TH=3;
-            if(gr3.getSelectedItem().toString().equals("D"))
-                TH=2;
-            if(gr3.getSelectedItem().toString().equals("F"))
-                TH=0;
-        }
-        else
-            TH=0;
-    }
-    public void four(){
-        if(hr44==3){
-            if(gr4.getSelectedItem().toString().equals("A+"))
-                FU=12;
-            if (gr4.getSelectedItem().toString().equals("A"))
-                FU=11.25;
-            if(gr4.getSelectedItem().toString().equals("B+"))
-                FU=10.5;
-            if(gr4.getSelectedItem().toString().equals("B"))
-                FU=9;
-            if(gr4.getSelectedItem().toString().equals("C+"))
-                FU=7.5;
-            if(gr4.getSelectedItem().toString().equals("C"))
-                FU=6;
-            if(gr4.getSelectedItem().toString().equals("D+"))
-                FU=4.5;
-            if(gr4.getSelectedItem().toString().equals("D"))
-                FU=3;
-            if(gr4.getSelectedItem().toString().equals("F"))
-                FU=0;
-        }
-        else if (hr44==2){
-            if(gr4.getSelectedItem().toString().equals("A+"))
-                FU=8;
-            if (gr4.getSelectedItem().toString().equals("A"))
-                FU=7.5;
-            if(gr4.getSelectedItem().toString().equals("B+"))
-                FU=7;
-            if(gr4.getSelectedItem().toString().equals("B"))
-                FU=6;
-            if(gr4.getSelectedItem().toString().equals("C+"))
-                FU=5;
-            if(gr4.getSelectedItem().toString().equals("C"))
-                FU=4;
-            if(gr4.getSelectedItem().toString().equals("D+"))
-                FU=3;
-            if(gr4.getSelectedItem().toString().equals("D"))
-                FU=2;
-            if(gr4.getSelectedItem().toString().equals("F"))
-                FU=0;
-        }
-        else
-            FU=0;
-    }
-
-    public void five(){
-        if(hr55==3){
-            if(gr5.getSelectedItem().toString().equals("A+"))
-                FI=12;
-            if (gr5.getSelectedItem().toString().equals("A"))
-                FI=11.25;
-            if(gr5.getSelectedItem().toString().equals("B+"))
-                FI=10.5;
-            if(gr5.getSelectedItem().toString().equals("B"))
-                FI=9;
-            if(gr5.getSelectedItem().toString().equals("C+"))
-                FI=7.5;
-            if(gr5.getSelectedItem().toString().equals("C"))
-                FI=6;
-            if(gr5.getSelectedItem().toString().equals("D+"))
-                FI=4.5;
-            if(gr5.getSelectedItem().toString().equals("D"))
-                FI=3;
-            if(gr5.getSelectedItem().toString().equals("F"))
-                FI=0;
-        }
-        else if (hr55==2){
-            if(gr5.getSelectedItem().toString().equals("A+"))
-                FI=8;
-            if (gr5.getSelectedItem().toString().equals("A"))
-                FI=7.5;
-            if(gr5.getSelectedItem().toString().equals("B+"))
-                FI=7;
-            if(gr5.getSelectedItem().toString().equals("B"))
-                FI=6;
-            if(gr5.getSelectedItem().toString().equals("C+"))
-                FI=5;
-            if(gr5.getSelectedItem().toString().equals("C"))
-                FI=4;
-            if(gr5.getSelectedItem().toString().equals("D+"))
-                FI=3;
-            if(gr5.getSelectedItem().toString().equals("D"))
-                FI=2;
-            if(gr5.getSelectedItem().toString().equals("F"))
-                FI=0;
-        }
-        else
-            FI=0;
-    }
-    public void six(){
-        if(hr66==3){
-            if(gr6.getSelectedItem().toString().equals("A+"))
-                SI=12;
-            if (gr6.getSelectedItem().toString().equals("A"))
-                SI=11.25;
-            if(gr6.getSelectedItem().toString().equals("B+"))
-                SI=10.5;
-            if(gr6.getSelectedItem().toString().equals("B"))
-                SI=9;
-            if(gr6.getSelectedItem().toString().equals("C+"))
-                SI=7.5;
-            if(gr6.getSelectedItem().toString().equals("C"))
-                SI=6;
-            if(gr6.getSelectedItem().toString().equals("D+"))
-                SI=4.5;
-            if(gr6.getSelectedItem().toString().equals("D"))
-                SI=3;
-            if(gr6.getSelectedItem().toString().equals("F"))
-                SI=0;
-        }
-        else if (hr66==2){
-            if(gr6.getSelectedItem().toString().equals("A+"))
-                SI=8;
-            if (gr6.getSelectedItem().toString().equals("A"))
-                SI=7.5;
-            if(gr6.getSelectedItem().toString().equals("B+"))
-                SI=7;
-            if(gr6.getSelectedItem().toString().equals("B"))
-                SI=6;
-            if(gr6.getSelectedItem().toString().equals("C+"))
-                SI=5;
-            if(gr6.getSelectedItem().toString().equals("C"))
-                SI=4;
-            if(gr6.getSelectedItem().toString().equals("D+"))
-                SI=3;
-            if(gr6.getSelectedItem().toString().equals("D"))
-                SI=2;
-            if(gr6.getSelectedItem().toString().equals("F"))
-                SI=0;
-        }
-        else
-            SI=0;
-    }
-   public void sven(){
-        if(hr77==3){
-            if(gr7.getSelectedItem().toString().equals("A+"))
-                SV=12;
-            if (gr7.getSelectedItem().toString().equals("A"))
-                SV=11.25;
-            if(gr7.getSelectedItem().toString().equals("B+"))
-                SV=10.5;
-            if(gr7.getSelectedItem().toString().equals("B"))
-                SV=9;
-            if(gr7.getSelectedItem().toString().equals("C+"))
-                SV=7.5;
-            if(gr7.getSelectedItem().toString().equals("C"))
-                SV=6;
-            if(gr7.getSelectedItem().toString().equals("D+"))
-                SV=4.5;
-            if(gr7.getSelectedItem().toString().equals("D"))
-                SV=3;
-            if(gr7.getSelectedItem().toString().equals("F"))
-                SV=0;
-        }
-        else if (hr77==2){
-            if(gr7.getSelectedItem().toString().equals("A+"))
-                SV=8;
-            if (gr7.getSelectedItem().toString().equals("A"))
-                SV=7.5;
-            if(gr7.getSelectedItem().toString().equals("B+"))
-                SV=7;
-            if(gr7.getSelectedItem().toString().equals("B"))
-                SV=6;
-            if(gr7.getSelectedItem().toString().equals("C+"))
-                SV=5;
-            if(gr7.getSelectedItem().toString().equals("C"))
-                SV=4;
-            if(gr7.getSelectedItem().toString().equals("D+"))
-                SV=3;
-            if(gr7.getSelectedItem().toString().equals("D"))
-                SV=2;
-            if(gr7.getSelectedItem().toString().equals("F"))
-                SV=0;
-        }
-        else {
-            SV = 0;
-        }
-    }
-
-
-
-
 
     public void calculate(View h){
-        double point=0.0;
         double hours=0.0;
         double result=0.0;
+        ON=0.0;
 
         get();
 
-        one();
-        two();
-        three();
-        four();
-        five();
-        six();
-        sven();
+        test(hr11,gr1.getSelectedItem().toString());
+        test(hr22,gr2.getSelectedItem().toString());
+        test(hr33,gr3.getSelectedItem().toString());
+        test(hr44,gr4.getSelectedItem().toString());
+        test(hr55,gr5.getSelectedItem().toString());
+        test(hr66,gr6.getSelectedItem().toString());
+        test(hr77,gr7.getSelectedItem().toString());
 
         hours=hr11+hr22+hr33+hr44+hr55+hr66+hr77;
-        point=ON+TW+TH+FU+FI+SI+SV;
-        result=point/hours;
+
         if (hours==0.0){
             txt_1.setText( "                   ادخل عدد الساعات اولاً                                    ");
         }else {
-            txt_1.setText("النقاط: " + point + "    الساعات: " + hours + "      النسبة: " + result + "");
+            result= ON/hours;
+            txt_1.setText("النقاط: " + ON + "    الساعات: " + hours + "      النسبة: " +  String.format("%.2f", (double)result) + "");
         }
     }
 
