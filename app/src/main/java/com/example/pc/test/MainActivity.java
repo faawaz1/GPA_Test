@@ -7,6 +7,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -18,7 +20,11 @@ public class MainActivity extends AppCompatActivity {
     EditText hr1,hr2,hr3,hr4,hr5,hr6,hr7;
     Spinner gr1,gr2,gr3,gr4,gr5,gr6,gr7;
     double hr11,hr22,hr33,hr44,hr55,hr66,hr77;
-    Switch sw;
+    RadioButton r1,r2;
+    boolean r11=false;
+    boolean r22=false;
+
+    RadioGroup radioGroup;
     List<String> list=new ArrayList<String>(); //list for element of spinner
 
     double ON=0; //variable of point
@@ -26,10 +32,13 @@ public class MainActivity extends AppCompatActivity {
     Button btn1;
     TextView txt_1;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
         hr1 = (EditText) findViewById(R.id.hu_1);
         gr1 = (Spinner) findViewById(R.id.gr1);
@@ -47,7 +56,12 @@ public class MainActivity extends AppCompatActivity {
         hr7 = (EditText) findViewById(R.id.hr_7);
         gr7 = (Spinner) findViewById(R.id.gr7);
         txt_1 = (TextView) findViewById(R.id.txt_1);
-        sw=(Switch)findViewById(R.id.switch1);
+        r1=(RadioButton)findViewById(R.id.radioButton);
+        r2=(RadioButton)findViewById(R.id.radioButton2);
+        radioGroup = (RadioGroup) findViewById(R.id.RadioGroup);
+        r2.setChecked(false);
+        r1.setChecked(false);
+
 
 
 
@@ -84,6 +98,29 @@ public class MainActivity extends AppCompatActivity {
         hr66=Double.parseDouble((hr6.getText().toString().equals(""))? "0.0": hr6.getText().toString());
         hr77=Double.parseDouble((hr7.getText().toString().equals(""))? "0.0": hr7.getText().toString());
     }
+
+    public void onRadioButtonClickedd(View view) {
+        if(r2.isChecked()){
+            r1.setChecked(false);
+            r2.setChecked(true);
+            r22=true;
+            r11=false;
+        }
+
+    }
+
+    public void onRadioButtonClicked(View view) {
+
+
+        if (r1.isChecked()) {
+            r2.setChecked(false);
+            r1.setChecked(true);
+            r11=true;
+            r22=false;
+        }
+
+}
+
 
 
     public void test(double hours,String grade) {
@@ -174,16 +211,17 @@ public class MainActivity extends AppCompatActivity {
         hours=hr11+hr22+hr33+hr44+hr55+hr66+hr77;
 
         if (hours==0.0){
-            txt_1.setText( " ادخل عدد الساعات اولا ");
-        }else if(sw.isChecked()) {
+            txt_1.setText( "ادخل عدد الساعات اولاً ");
+        }else if(r11) {
 
             result= TW/hours;
             txt_1.setText("النقاط: " + TW + "    الساعات: " + hours + "      النسبة: " +  String.format("%.2f", (double)result) + "");
-        }else {
+        }else if (r22){
 
             result= ON/hours;
             txt_1.setText("النقاط: " + ON + "    الساعات: " + hours + "      النسبة: " +  String.format("%.2f", (double)result) + "");
-        }
+        }else
+            txt_1.setText( "اختر نوع النسبة ");
 
     }
 
