@@ -6,40 +6,23 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    EditText hr1;
-    Spinner gr1;
-    EditText hr2;
-    Spinner gr2;
-    EditText hr3;
-    Spinner gr3;
-    EditText hr4;
-    Spinner gr4;
-    EditText hr5;
-    Spinner gr5;
-    EditText hr6;
-    Spinner gr6;
-    EditText hr7;
-    Spinner gr7;
-
-    double hr11;
-    double hr22;
-    double hr33;
-    double hr44;
-    double hr55;
-    double hr66;
-    double hr77;
-
+    EditText hr1,hr2,hr3,hr4,hr5,hr6,hr7;
+    Spinner gr1,gr2,gr3,gr4,gr5,gr6,gr7;
+    double hr11,hr22,hr33,hr44,hr55,hr66,hr77;
+    Switch sw;
     List<String> list=new ArrayList<String>(); //list for element of spinner
 
     double ON=0; //variable of point
-
+    double TW=0;
     Button btn1;
     TextView txt_1;
 
@@ -64,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
         hr7 = (EditText) findViewById(R.id.hr_7);
         gr7 = (Spinner) findViewById(R.id.gr7);
         txt_1 = (TextView) findViewById(R.id.txt_1);
+        sw=(Switch)findViewById(R.id.switch1);
+
 
 
         list.add("A+");
@@ -101,60 +86,80 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     public void test(double hours,String grade) {
         if (hours == 3) {
             switch (grade) {
                 case "A+":ON += 12.0;
+                    TW+=15;
                     break;
                 case "A":ON += 11.25;
+                    TW+=14.25;
                     break;
                 case "B+":ON += 10.5;
+                    TW+=13.5;
                     break;
                 case "B":ON += 9;
+                    TW+=12;
                     break;
-                case "C+":ON += 7.6;
+                case "C+":ON += 7.5;
+                    TW+=10.5;
                     break;
                 case "C":ON += 6;
+                    TW+=9;
                     break;
                 case "D+":ON += 4.5;
+                    TW+=7.5;
                     break;
                 case "D":ON += 3;
+                    TW+=6;
                     break;
                 case "F":ON += 0;
+                    TW+=3;
                     break;
             }
         } else
             if (hours == 2) {
                 switch (grade) {
                     case "A+":ON += 8;
+                        TW+=10;
                         break;
                     case "A":ON += 7.5;
+                        TW+=9.5;
                         break;
                     case "B+":ON += 7;
+                        TW+=9;
                         break;
                     case "B":ON += 6;
+                        TW+=8;
                         break;
                     case "C+":ON += 5;
+                        TW+=7;
                         break;
                     case "C":ON += 4;
+                        TW+=6;
                         break;
                     case "D+":ON += 3;
+                        TW+=5;
                         break;
                     case "D":ON += 2;
+                        TW+=4;
                         break;
                     case "F":ON += 0;
+                        TW+=2;
                         break;
                 }
             }
         else
             ON += 0;
+        TW+=0;
     }
 
     public void calculate(View h){
+
         double hours=0.0;
         double result=0.0;
         ON=0.0;
+        TW=0.0;
 
         get();
 
@@ -169,11 +174,17 @@ public class MainActivity extends AppCompatActivity {
         hours=hr11+hr22+hr33+hr44+hr55+hr66+hr77;
 
         if (hours==0.0){
-            txt_1.setText( "                   ادخل عدد الساعات اولاً                                    ");
+            txt_1.setText( " ادخل عدد الساعات اولا ");
+        }else if(sw.isChecked()) {
+
+            result= TW/hours;
+            txt_1.setText("النقاط: " + TW + "    الساعات: " + hours + "      النسبة: " +  String.format("%.2f", (double)result) + "");
         }else {
+
             result= ON/hours;
             txt_1.setText("النقاط: " + ON + "    الساعات: " + hours + "      النسبة: " +  String.format("%.2f", (double)result) + "");
         }
+
     }
 
 }
