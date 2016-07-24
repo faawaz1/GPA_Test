@@ -3,268 +3,187 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.pc.test.MainActivity"
-    android:background="#3c3535">
+    android:background="@color/button_material_light"
+    android:orientation="vertical">
 
-    <EditText
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/hu_1"
-        android:layout_below="@+id/textView"
-        android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/textView" />
-
-    <EditText
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/hu_2"
-        android:layout_below="@+id/hu_1"
-        android:layout_alignEnd="@+id/hu_1" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/hr_3"
-        android:layout_below="@+id/hu_2"
-        android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/hu_2" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/hr_4"
-        android:layout_below="@+id/hr_3"
-        android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/hr_3" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="احسب"
-        android:id="@+id/btn_1"
-        android:onClick="calculate"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        android:layout_below="@+id/textView3"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="النتيجة"
-        android:id="@+id/txt_1"
-        android:textSize="20dp"
-        android:paddingTop="15dp"
-        android:layout_below="@+id/btn_1"
-        android:layout_alignParentEnd="true"
-        android:textStyle="bold"
-        android:layout_alignParentStart="true"
-        android:gravity="center"
-        android:layout_marginTop="-10dp" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/hr_5"
-        android:layout_below="@+id/hr_4"
-        android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/textView" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/hr_7"
-        android:layout_below="@+id/hr_6"
-        android:layout_alignParentStart="true"
-        android:layout_toStartOf="@+id/btn_1" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/hr_6"
-        android:layout_below="@+id/hr_5"
-        android:layout_alignParentStart="true"
-        android:layout_toStartOf="@+id/btn_1" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="عدد الساعات"
-        android:id="@+id/textView"
-        android:textSize="25dp"
-        android:layout_alignParentTop="true"
-        android:layout_toStartOf="@+id/btn_1" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="التقدير بالعلامة"
-        android:id="@+id/textView2"
-        android:textSize="25dp"
-        android:layout_alignEnd="@+id/txt_1"
-        android:layout_alignParentEnd="false"
-        android:layout_alignParentStart="false"
         android:layout_alignParentBottom="false"
-        android:layout_alignWithParentIfMissing="false"
-        android:paddingEnd="5dp"
-        android:paddingStart="5dp"
-        android:layout_alignParentTop="true" />
-
-    <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/gr1"
-        android:background="#FFB27F7F"
-        android:paddingBottom="20dp"
-        android:layout_below="@+id/textView"
-        android:layout_toEndOf="@+id/btn_1"
-        android:layout_alignBottom="@+id/hu_1"
-        android:layout_alignStart="@+id/gr2"
-        android:layout_marginBottom="3dp"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="3dp"
-        android:popupBackground="#9a6868" />
+        android:layout_alignParentTop="true"
+        android:id="@+id/title"
+        android:weightSum="4">
 
-    <Spinner
-        android:layout_width="wrap_content"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="عدد الساعات"
+            android:id="@+id/textView"
+            android:textSize="25dp"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@+id/btn_1"
+            android:layout_weight="1"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_gravity="center"
+            android:enabled="true"
+            android:gravity="center_vertical|center_horizontal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gradealphabet"
+            android:id="@+id/textView2"
+            android:textSize="25dp"
+            android:layout_alignEnd="@+id/txt_1"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentStart="false"
+            android:layout_alignParentBottom="false"
+            android:layout_alignWithParentIfMissing="false"
+            android:paddingEnd="5dp"
+            android:paddingStart="5dp"
+            android:layout_alignParentTop="true"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_gravity="center"
+            android:enabled="true"
+            android:gravity="center_vertical|center_horizontal" />
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/record"
+        android:layout_below="@+id/title"
+        android:layout_centerHorizontal="true">
+
+        <EditText
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:inputType="number"
+            android:ems="2"
+            android:id="@+id/edittext"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="5dp" />
+
+        <Spinner
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:id="@+id/spinner"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="5dp"
+            android:entries="@array/grades" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:text="+"
+            android:id="@+id/button2"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="5dp"
+            android:onClick="add" />
+    </LinearLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:id="@+id/subjectList"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/record"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/gr2"
-        android:background="#FFB27F7F"
-        android:layout_below="@+id/gr1"
-        android:layout_alignStart="@+id/gr3"
-        android:layout_above="@+id/hr_3"
-        android:layout_marginBottom="3dp"
+        android:layout_below="@+id/subjectList"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/Results"
+        android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="3dp"
-        android:foreground="#FFB27F7F"
-        android:focusable="false"
-        android:focusableInTouchMode="false"
-        android:spinnerMode="dropdown"
-        android:popupBackground="#9a6868" />
+        android:gravity="center_vertical|center_horizontal">
 
-    <Spinner
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|center_horizontal">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5"
+                android:id="@+id/radioButton"
+                android:typeface="monospace"
+                android:onClick="onRadioButtonClicked"
+                android:checked="false"
+                android:focusable="false"
+                android:layout_alignTop="@+id/radioButton2" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4"
+                android:id="@+id/radioButton2"
+                android:typeface="monospace"
+                android:onClick="onRadioButtonClicked"
+                android:layout_below="@+id/textView"
+                android:checked="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="نوع النسبة :"
+                android:id="@+id/textView3"
+                android:textSize="22dp"
+                android:textIsSelectable="false"
+                android:layout_alignTop="@+id/radioButton"
+                android:layout_alignStart="@+id/textView" />
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="احسب"
+            android:id="@+id/btn_1"
+            android:onClick="calculate"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:layout_below="@+id/textView3"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="النتيجة"
+            android:id="@+id/txt_1"
+            android:textSize="20dp"
+            android:paddingTop="15dp"
+            android:layout_below="@+id/btn_1"
+            android:layout_alignParentEnd="true"
+            android:textStyle="bold"
+            android:layout_alignParentStart="true"
+            android:gravity="center"
+            android:layout_marginTop="-10dp" />
+
+        <RadioGroup android:id="@+id/RadioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/gr3"
-        android:background="#FFB27F7F"
-        android:layout_below="@+id/gr2"
-        android:layout_alignStart="@+id/gr4"
-        android:layout_above="@+id/gr4"
-        android:layout_marginBottom="3dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="3dp"
-        android:popupBackground="#9a6868" />
+        android:layout_alignEnd="@+id/txt_1"
+        android:layout_marginEnd="29dp">
 
-    <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/gr4"
-        android:background="#FFB27F7F"
-        android:layout_below="@+id/hr_3"
-        android:layout_alignStart="@+id/gr5"
-        android:layout_alignBottom="@+id/hr_4"
-        android:layout_marginBottom="3dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="3dp"
-        android:popupBackground="#9a6868" />
+    </RadioGroup>
 
-    <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/gr5"
-        android:background="#FFB27F7F"
-        android:layout_below="@+id/gr4"
-        android:layout_alignStart="@+id/gr6"
-        android:layout_above="@+id/hr_6"
-        android:layout_marginBottom="3dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="3dp"
-        android:popupBackground="#9a6868" />
-
-    <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/gr6"
-        android:background="#FFB27F7F"
-        android:layout_below="@+id/gr5"
-        android:layout_toEndOf="@+id/btn_1"
-        android:layout_above="@+id/gr7"
-        android:layout_marginBottom="3dp"
-        android:layout_alignParentStart="false"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="3dp"
-        android:popupBackground="#9a6868" />
-
-    <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/gr7"
-        android:background="#FFB27F7F"
-        android:layout_alignParentEnd="true"
-        android:layout_alignStart="@+id/gr6"
-        android:layout_below="@+id/hr_6"
-        android:layout_above="@+id/textView3"
-        android:layout_marginBottom="3dp"
-        android:layout_marginTop="3dp"
-        android:popupBackground="#9a6868" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="نوع النسبة :"
-        android:id="@+id/textView3"
-        android:textSize="22dp"
-        android:textIsSelectable="false"
-        android:layout_alignTop="@+id/radioButton"
-        android:layout_alignStart="@+id/textView" />
-
-    <RadioGroup android:id="@+id/RadioGroup"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_alignEnd="@+id/txt_1"
-    android:layout_marginEnd="29dp">
-
-</RadioGroup>
-
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="5"
-        android:id="@+id/radioButton"
-        android:typeface="monospace"
-        android:onClick="onRadioButtonClicked"
-        android:checked="false"
-        android:focusable="false"
-        android:layout_alignTop="@+id/radioButton2"
-        android:layout_toEndOf="@+id/hr_7" />
-
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="4"
-        android:id="@+id/radioButton2"
-        android:typeface="monospace"
-        android:onClick="onRadioButtonClickedd"
-        android:layout_below="@+id/hr_7"
-        android:layout_toStartOf="@+id/gr7" />
+    </LinearLayout>
 
 </RelativeLayout>
