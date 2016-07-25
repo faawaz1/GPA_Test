@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">قياس المعدل</string>
     <string name="gradealphabet">التقدير بالعلامة</string>
+    <string name="about">About</string>
     <string-array name="grades">
         <item>A+</item>
         <item>A</item>

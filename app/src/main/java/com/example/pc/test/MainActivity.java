@@ -1,14 +1,19 @@
 package com.example.pc.test;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
@@ -34,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     Spinner spinner;
     EditText editText;
     Button button2;
+    LinearLayout result;
 
     ArrayList<Subject> subjects ;
     ListView subjectList ;
@@ -47,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         spinner = (Spinner) findViewById(R.id.spinner);
         editText = (EditText) findViewById(R.id.edittext);
         button2 = (Button) findViewById(R.id.button2);
+        result = (LinearLayout) findViewById(R.id.Results);
 
         subjects = new ArrayList<>();
         subjectList = (ListView) findViewById(R.id.subjectList);
@@ -60,18 +67,36 @@ public class MainActivity extends AppCompatActivity {
 
         DisplayMetrics metrics = getResources().getDisplayMetrics();
 
-        int deviceHeight = metrics.heightPixels;
+        //int deviceHeight = metrics.heightPixels;
         int deviceWidth  = metrics.widthPixels;
-        deviceHeight+=300;
-        ViewGroup.LayoutParams params2 = subjectList.getLayoutParams();
-        params2.height =deviceHeight/3;
+        //deviceHeight+=300;
 
+        subjectList.getLayoutParams().height -= result.getLayoutParams().height;
         editText.getLayoutParams().width = deviceWidth/3;
         spinner.getLayoutParams().width = deviceWidth/3;
         button2.getLayoutParams().width = deviceWidth/4;
 
 
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.about:
+                Intent intent= new Intent(MainActivity.this, About.class);
+                startActivity(intent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     public void add(View v){
