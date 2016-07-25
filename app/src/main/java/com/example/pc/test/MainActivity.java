@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
     Spinner spinner;
     EditText editText;
+    Button button2;
 
     ArrayList<Subject> subjects ;
     ListView subjectList ;
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
         spinner = (Spinner) findViewById(R.id.spinner);
         editText = (EditText) findViewById(R.id.edittext);
+        button2 = (Button) findViewById(R.id.button2);
 
         subjects = new ArrayList<>();
         subjectList = (ListView) findViewById(R.id.subjectList);
@@ -59,9 +61,15 @@ public class MainActivity extends AppCompatActivity {
         DisplayMetrics metrics = getResources().getDisplayMetrics();
 
         int deviceHeight = metrics.heightPixels;
+        int deviceWidth  = metrics.widthPixels;
         deviceHeight+=300;
         ViewGroup.LayoutParams params2 = subjectList.getLayoutParams();
         params2.height =deviceHeight/3;
+
+        editText.getLayoutParams().width = deviceWidth/3;
+        spinner.getLayoutParams().width = deviceWidth/3;
+        button2.getLayoutParams().width = deviceWidth/4;
+
 
 
     }
