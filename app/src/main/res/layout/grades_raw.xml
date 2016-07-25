@@ -34,7 +34,7 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="50dp"
         android:layout_height="40dp"
-        android:text="__"
+        android:text="ـــ"
         android:id="@+id/row_delete"
         android:layout_gravity="center_vertical"
         android:layout_margin="5dp"

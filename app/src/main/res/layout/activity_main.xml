@@ -61,7 +61,7 @@
         android:layout_height="60dp"
         android:id="@+id/record"
         android:layout_below="@+id/title"
-        android:layout_centerHorizontal="true">
+        android:layout_alignParentEnd="true">
 
         <EditText
             android:layout_width="150dp"
@@ -118,6 +118,17 @@
             android:layout_height="wrap_content"
             android:gravity="center_vertical|center_horizontal">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="نوع النسبة :"
+                android:id="@+id/textView3"
+                android:textSize="22dp"
+                android:textIsSelectable="false"
+                android:layout_alignTop="@+id/radioButton"
+                android:layout_alignStart="@+id/textView" />
+
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -139,16 +150,6 @@
                 android:layout_below="@+id/textView"
                 android:checked="true" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="نوع النسبة :"
-                android:id="@+id/textView3"
-                android:textSize="22dp"
-                android:textIsSelectable="false"
-                android:layout_alignTop="@+id/radioButton"
-                android:layout_alignStart="@+id/textView" />
         </LinearLayout>
 
         <Button
